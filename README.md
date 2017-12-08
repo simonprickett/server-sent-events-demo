@@ -1,6 +1,17 @@
-# Server Send Events Demo
+# Server Sent Events Demo
 
 A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetup using Node, HTML, JavaScript, CSS.
+
+## TODO
+
+* Add the finiite events source on the server
+* Fix cat facts to be all short enough
+* Add more meme images
+* Add the finite events source logic on the client
+* Add a start/stop button for the infinite events
+* Work out how to stop the server sending the infinite events if the client goes away
+* Produce slides
+* Product a version that uses frameworks
 
 ## Reference Materials
 
