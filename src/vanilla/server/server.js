@@ -4,21 +4,20 @@ const http = require('http');
 const PORT = process.env.PORT || 5000;
 
 const catFacts = [
-  'Every year, nearly four million cats are eaten in Asia.',
   'On average, cats spend 2/3 of every day sleeping.',
   'Unlike dogs, cats do not have a sweet tooth.',
   'When a cat chases its prey, it keeps its head level.',
   'The technical term for a cat\'s hairball is a bezoar.',
   'A group of cats is called a clowder.',
-  'Female cats tend to be right pawed, while male cats are more often left pawed.',
-  'A cat cannot climb head first down a tree because its claws are curved the wrong way.',
   'Cats make about 100 different sounds.',
-  'A cat\'s brain is biologically more similar to a human brain than it is to a dog\'s.',
-  'There are more than 500 million domestic cats in the world.',
-  'Approximately 24 cat skins can make a coat.',
-  'During the Middle Ages, cats were associated with witchcraft.',
+  'There are over 500 million domestic cats globally.',
   'Cats are the most popular pet in North America.',
-  'Approximately 40,000 people are bitten by cats in the USA each year.'
+  'A cat\'s hearing is better than a dog\'s.',
+  'Researchers are unsure exactly how a cat purrs.',
+  'The biggest wildcat today is the Siberian Tiger.',
+  'The smallest wildcat today is the Black-footed cat.',
+  'A cat\'s sight is both better and worse than humans.',
+  'Cats have 32 muscles that control the outer ear.'
 ];
 
 // Get more from https://imgflip.com/memetemplates
@@ -63,8 +62,6 @@ function createRandomNamedEvents(response) {
   setInterval(() => {
     const msgType = getRandomIndex(0, 3);
 
-    console.log(`Chose message type ${msgType}`);
-
     switch (msgType) {
       case 0:
         response.write(createCoinTossMessage());
@@ -79,7 +76,7 @@ function createRandomNamedEvents(response) {
         response.write(createRandomMemeMessage());
         break;
       default:
-        console.log(`Was expecting msgType 0..3, got ${messageType}!`);
+        console.log(`Was expecting msgType 0..3, got ${msgType}!`);
     }
   }, 3000);
 }
