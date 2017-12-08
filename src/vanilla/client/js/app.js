@@ -28,7 +28,6 @@ const app = {
         console.log(e);
       });
     } else {
-      // TODO update app id div to say browser does not support EventSource...
       // TODO update div to have additional class 'unsupportedBrowser
       document.getElementById('browserSupport').innerHTML = 'Sorry, your browser does not support <tt>EventSource</tt> which is required for this demo.';
     }
