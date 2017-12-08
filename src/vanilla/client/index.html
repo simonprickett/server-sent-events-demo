@@ -9,22 +9,30 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <h1>Server Sent Events Demo</h1>
-        <div id="app">
-            <div id="browserSupport">
+        <div class="header">
+            Server Sent Events Demo
+        </div>
+        <div id="browserSupport" class="browserSupport">
+        </div>
+        <div id="app" class="container">
+            <div id="coinToss" class="box coinToss">
+                Coin Toss Events
             </div>
-            <div id="coinToss">
+            <div id="dieRoll" class="box dieRoll">
+                Die Roll Events
             </div>
-            <div id="dieRoll">
+            <div id="catFact" class="box catFacts">
+                Cat Fact Events
             </div>
-            <div id="catFact">
+            <div id="meme" class="box memes">
+                Meme Image Events
             </div>
-            <div id="meme">
-            </div>
-            <div id="finiteNumberOfEvents">
+            <div id="finiteNumberOfEvents" class="rectangle">
+                <p>Finite Event Stream</p>
             </div>
         </div>
-        <hr>
-        <p>A small demo by <a href="http://crudworks.org" target="_blank">Simon Prickett</a> | Get the source from the <a href="https://github.com/simonprickett/server-sent-events-demo" target="_blank">GitHub repo.</a></p>
+        <div class="footer">
+            <p>A small demo by <a href="http://crudworks.org" target="_blank">Simon Prickett</a>. | Get the source from the <a href="https://github.com/simonprickett/server-sent-events-demo" target="_blank">GitHub repo</a>.</p>
+        </div>
     </body>
 </html>

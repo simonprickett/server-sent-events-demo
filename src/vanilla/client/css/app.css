@@ -1,1 +1,98 @@
 /* vanilla/client/css/app.css */
+html {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+a {
+    color: #EEEE00;
+    text-decoration: none;
+}
+
+.header {
+    text-align: center;
+    font-size: 3.0em;
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.browserSupport {
+    width: 80%;
+    height: 60px;
+    max-width: 960px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    border-width: 1px;
+    background-color: #00BB00;
+    color: #FFFFFF;
+    font-size: 2em;
+    line-height: 60px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unsupportedBrowser {
+    background-color: #EE0000;
+}
+
+.box {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 1px;
+    margin: .5em;
+    padding: 1em;
+    text-align: center;
+    font-size: 2em;
+    color: #FFFFFF;
+}
+
+.coinToss {
+    background-color: #004400;
+}
+
+.dieRoll {
+    background-color: #990000;    
+}
+
+.catFacts {
+    background-color: #0000EE;
+}
+
+.memes {
+    background-color: #FFEE00;
+}
+
+.memeImage {
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle {
+    height: 100px;
+    width: 650px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    margin: 20px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.5em;
+}

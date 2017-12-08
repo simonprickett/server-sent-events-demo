@@ -11,7 +11,7 @@ const catFacts = [
   'The technical term for a cat\'s hairball is a bezoar.',
   'A group of cats is called a clowder.',
   'Female cats tend to be right pawed, while male cats are more often left pawed.',
-  'A cat cannot climb head first down a tree because its claws are curved the wrong way',
+  'A cat cannot climb head first down a tree because its claws are curved the wrong way.',
   'Cats make about 100 different sounds.',
   'A cat\'s brain is biologically more similar to a human brain than it is to a dog\'s.',
   'There are more than 500 million domestic cats in the world.',
