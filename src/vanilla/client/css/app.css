@@ -84,12 +84,18 @@ a {
 
 .rectangle {
     height: 100px;
-    width: 650px;
+    width: 900px;
     border-radius: 5px;
     border-style: solid;
     border-color: #000000;
     border-width: 1px;
     margin: 20px;
+    overflow: scroll;
+}
+
+.eventLog {
+    font-family: monospace;
+    font-size: 1.5em;
 }
 
 .footer {

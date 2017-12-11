@@ -7,7 +7,7 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 * Add the finiite events source on the server
 * Add the finite events source logic on the client
 * Add a start/stop button for the infinite events
-* Work out how to stop the server sending the infinite events if the client goes away
+* Work out how to stop the server sending the infinite events if the client goes away https://stackoverflow.com/questions/30645664/how-to-stop-server-sent-events
 * Produce slides
 * Produce a version that uses frameworks
 
