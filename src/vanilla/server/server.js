@@ -23,6 +23,10 @@ const catFacts = [
 // Get more from https://imgflip.com/memetemplates
 const memes = [
   'https://imgflip.com/s/meme/Creepy-Condescending-Wonka.jpg',
+  'https://imgflip.com/s/meme/Doge.jpg',
+  'https://imgflip.com/s/meme/Philosoraptor.jpg',
+  'https://imgflip.com/s/meme/Conspiracy-Keanu.jpg',
+  'https://imgflip.com/s/meme/Table-Flip-Guy.jpg'
 ];
 
 function getRandomIndex(low, high) {
