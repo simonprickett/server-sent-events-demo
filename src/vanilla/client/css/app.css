@@ -82,20 +82,19 @@ a {
     height: 100%;
 }
 
-.rectangle {
+.eventLog {
+    font-family: monospace;
+    font-size: 1.25em;
     height: 100px;
     width: 900px;
     border-radius: 5px;
     border-style: solid;
-    border-color: #000000;
+    border-color: #FFFFFF;
     border-width: 1px;
     margin: 20px;
-    overflow: scroll;
-}
-
-.eventLog {
-    font-family: monospace;
-    font-size: 1.5em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 5px;
 }
 
 .footer {
