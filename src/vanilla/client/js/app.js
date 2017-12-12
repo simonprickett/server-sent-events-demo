@@ -7,7 +7,7 @@ const app = {
     const eventLog = document.getElementById('eventLog');
 
     app.eventsReceived++;
-    eventLog.innerHTML = `${eventLog.innerHTML}<br/>${app.eventsReceived}: (${event.type}) ${event.data}`;
+    eventLog.insertAdjacentHTML('afterbegin', `<br>${app.eventsReceived < 10 ? '0' : ''}${app.eventsReceived}: (${event.type}) ${event.data}`);
   },
 
   initialize: () => {
