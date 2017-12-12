@@ -7,7 +7,6 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 * Make the server stop sending events after however many events
 * Add a start/stop button for the events to the client
 * Stop the client immediately requesting events on page load
-* Fix the scrolling on the event log and make the most recent event appear at the top
 * Look at this https://stackoverflow.com/questions/30645664/how-to-stop-server-sent-events
 * Produce slides
 * Produce a version that uses frameworks
