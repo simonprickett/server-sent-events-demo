@@ -20,7 +20,6 @@ const catFacts = [
   'Cats have 32 muscles that control the outer ear.'
 ];
 
-// Get more from https://imgflip.com/memetemplates
 const memes = [
   'https://imgflip.com/s/meme/Creepy-Condescending-Wonka.jpg',
   'https://imgflip.com/s/meme/Doge.jpg',
@@ -113,8 +112,6 @@ http.createServer((request, response) => {
   switch (request.url) {
     case '/randomNamedEvents':
       createRandomNamedEvents(response);
-      break;
-    case '/todo2':
       break;
     default:
       // Unknown URL
