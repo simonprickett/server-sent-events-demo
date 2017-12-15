@@ -2,6 +2,8 @@
 
 A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetup using Node, HTML, JavaScript, CSS.
 
+![demo](sse_demo.gif)
+
 ## TODO
 
 * Add a start/stop button for the events to the client
