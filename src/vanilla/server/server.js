@@ -63,9 +63,18 @@ function createRandomNamedEvents(response) {
     'Cache-Control': 'no-cache'
   });
 
-  let eventsSent = 0;
+  let eventsSent = 1;
 
   const interval = setInterval(() => {
+    if (eventsSent === 31) {
+      clearInterval(interval);
+      console.log('Sent 30 events, stopping.');
+      response.write('id: -1\ndata:\n\n\n');
+      return;
+    }
+
+    response.write(`id: ${eventsSent < 10 ? '0' : ''}${eventsSent}\n`);
+
     const msgType = getRandomIndex(0, 3);
 
     switch (msgType) {
@@ -85,14 +94,6 @@ function createRandomNamedEvents(response) {
         response.write(createRandomMemeMessage());
         eventsSent += 1;
         break;
-      default:
-        console.log(`Was expecting msgType 0..3, got ${msgType}!`);
-    }
-
-    if (eventsSent === 30) {
-      clearInterval(interval);
-      console.log('Sent 30 events, stopping.');
-      // TODO send close event...
     }
   }, 3000);
 }

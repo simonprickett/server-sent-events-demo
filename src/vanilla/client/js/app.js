@@ -1,13 +1,10 @@
 // vanilla/client/js/app.js
 
 const app = {
-  eventsReceived : 0,
-
   updateEventsReceived: (event) => {
     const eventLog = document.getElementById('eventLog');
 
-    app.eventsReceived++;
-    eventLog.insertAdjacentHTML('afterbegin', `<br>${app.eventsReceived < 10 ? '0' : ''}${app.eventsReceived}: (${event.type}) ${event.data}`);
+    eventLog.insertAdjacentHTML('afterbegin', `<br>${event.lastEventId}: (${event.type}) ${event.data}`);
   },
 
   initialize: () => {
@@ -15,14 +12,23 @@ const app = {
       document.getElementById('browserSupport').innerHTML = 'This browser supports <tt>EventSource</tt>!';
 
       const eventSource = new EventSource('http://localhost:5000/randomNamedEvents');
-      app.eventsReceived = 0;
+
+      eventSource.onmessage = (e) => {
+        console.log(e);
+        if (e.lastEventId === '-1') {
+          eventSource.close();
+          document.getElementById('eventLog').insertAdjacentHTML('afterbegin', '<br>End of event stream from server.');
+        }
+      };
 
       eventSource.addEventListener('coinToss', (e) => {
+        console.log(e);
         document.getElementById('coinToss').innerHTML = `${e.data}`;
         app.updateEventsReceived(e);
       });
 
       eventSource.addEventListener('dieRoll', (e) => {
+        console.log(e);
         document.getElementById('dieRoll').innerHTML = `${e.data}`;
         app.updateEventsReceived(e);
       });
@@ -33,6 +39,7 @@ const app = {
       });
 
       eventSource.addEventListener('meme', (e) => {
+        console.log(e);
         document.getElementById('meme').innerHTML = `<img class="memeImage" src="${e.data}">`;
         app.updateEventsReceived(e);
       });
