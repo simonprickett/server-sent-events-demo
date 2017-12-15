@@ -63,24 +63,36 @@ function createRandomNamedEvents(response) {
     'Cache-Control': 'no-cache'
   });
 
-  setInterval(() => {
+  let eventsSent = 0;
+
+  const interval = setInterval(() => {
     const msgType = getRandomIndex(0, 3);
 
     switch (msgType) {
       case 0:
         response.write(createCoinTossMessage());
+        eventsSent += 1;
         break;
       case 1:
         response.write(createDieRollMessage());
+        eventsSent += 1;
         break;
       case 2:
-        response.write(createRandomCatFactMessage());    
+        response.write(createRandomCatFactMessage()); 
+        eventsSent += 1;   
         break;
       case 3:
         response.write(createRandomMemeMessage());
+        eventsSent += 1;
         break;
       default:
         console.log(`Was expecting msgType 0..3, got ${msgType}!`);
+    }
+
+    if (eventsSent === 30) {
+      clearInterval(interval);
+      console.log('Sent 30 events, stopping.');
+      // TODO send close event...
     }
   }, 3000);
 }
