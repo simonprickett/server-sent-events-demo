@@ -7,7 +7,6 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 ## TODO
 
 * Produce slides
-* Produce a version that uses frameworks
 
 ## Running this Project
 
@@ -16,7 +15,7 @@ The following instructions assume Mac OS / Linux system with Python installed (t
 ### Start the Server in a Terminal Window
 
 ```
-cd src/vanilla/server
+cd src/server
 npm install
 npm start
 ```
@@ -24,7 +23,7 @@ npm start
 ### Start the Client in another Terminal Window
 
 ```
-cd src/vanilla/client
+cd src/client
 python -m SimpleHTTPServer
 ```
 
