@@ -55,7 +55,7 @@ function createRandomMemeMessage() {
   return (`event: meme\ndata:${memes[getRandomIndex(0, memes.length - 1)]}\n\n\n`);
 }
 
-function createRandomNamedEvents(response) {
+function createRandomNamedEvents(request, response) {
   response.writeHead(200, {
     Connection: 'keep-alive',
     'Content-Type': 'text/event-stream',
@@ -69,6 +69,7 @@ function createRandomNamedEvents(response) {
       clearInterval(interval);
       console.log('Sent 30 events, stopping.');
       response.write('id: -1\ndata:\n\n\n');
+      response.end();
       return;
     }
 
@@ -95,6 +96,12 @@ function createRandomNamedEvents(response) {
         break;
     }
   }, 3000);
+
+  request.on('close', () => {
+    clearInterval(interval);
+    response.end();
+    console.log('Stopped sending events as client closed the connection.');
+  });
 }
 
 http.createServer((request, response) => {
@@ -111,7 +118,7 @@ http.createServer((request, response) => {
 
   switch (request.url) {
     case '/randomNamedEvents':
-      createRandomNamedEvents(response);
+      createRandomNamedEvents(request, response);
       break;
     default:
       // Unknown URL
