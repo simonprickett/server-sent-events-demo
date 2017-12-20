@@ -1,4 +1,4 @@
-// vanilla/client/js/app.js
+// client/js/app.js
 
 const app = {
   updateEventsReceived: (event) => {
