@@ -12,6 +12,13 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 
 The following instructions assume Mac OS / Linux system with Python installed (to provide a simple web server).
 
+### Get the Code using a Terminal Window
+
+```
+git clone https://github.com/simonprickett/server-sent-events-demo.git
+cd server-sent-events-demo
+```
+
 ### Start the Server in a Terminal Window
 
 ```
