@@ -1,0 +1,9 @@
+{
+  "esversion": 6,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "newcap": true,
+  "noempty": true
+}
