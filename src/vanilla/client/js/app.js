@@ -2,59 +2,73 @@
 
 const app = {
   updateEventsReceived: (event) => {
-    const eventLog = document.getElementById('eventLog');
-
-    eventLog.insertAdjacentHTML('afterbegin', `<br>${event.lastEventId}: (${event.type}) ${event.data}`);
+    document.getElementById('eventLog').insertAdjacentHTML('afterbegin', `<br>${event.lastEventId}: (${event.type}) ${event.data}`);
   },
 
-  initialize: () => {
-    if (!! window.EventSource) {
-      document.getElementById('browserSupport').innerHTML = 'This browser supports <tt>EventSource</tt>!';
+  resetStartButton: () => {
+    document.getElementById('startEvents').value = 'Start Events';
+  },
 
-      const eventSource = new EventSource('http://localhost:5000/randomNamedEvents');
+  startEvents: () => {
+    app.eventSource = new EventSource('http://localhost:5000/randomNamedEvents');
 
-      eventSource.onmessage = (e) => {
-        console.log(e);
-        if (e.lastEventId === '-1') {
-          eventSource.close();
-          document.getElementById('eventLog').insertAdjacentHTML('afterbegin', '<br>End of event stream from server.');
-        }
-      };
+    app.eventSource.onmessage = (e) => {
+      console.log(e);
+      if (e.lastEventId === '-1') {
+        app.eventSource.close();
+        document.getElementById('eventLog').insertAdjacentHTML('afterbegin', '<br>End of event stream from server.');
+        app.resetStartButton();
+      }
+    };
 
-      eventSource.addEventListener('coinToss', (e) => {
-        console.log(e);
-        document.getElementById('coinToss').innerHTML = `${e.data}`;
-        app.updateEventsReceived(e);
-      });
+    app.eventSource.addEventListener('coinToss', (e) => {
+      console.log(e);
+      document.getElementById('coinToss').innerHTML = `${e.data}`;
+      app.updateEventsReceived(e);
+    });
 
-      eventSource.addEventListener('dieRoll', (e) => {
-        console.log(e);
-        document.getElementById('dieRoll').innerHTML = `${e.data}`;
-        app.updateEventsReceived(e);
-      });
+    app.eventSource.addEventListener('dieRoll', (e) => {
+      console.log(e);
+      document.getElementById('dieRoll').innerHTML = `${e.data}`;
+      app.updateEventsReceived(e);
+    });
 
-      eventSource.addEventListener('catFact', (e) => {
-        document.getElementById('catFact').innerHTML = `${e.data}`;
-        app.updateEventsReceived(e);
-      });
+    app.eventSource.addEventListener('catFact', (e) => {
+      document.getElementById('catFact').innerHTML = `${e.data}`;
+      app.updateEventsReceived(e);
+    });
 
-      eventSource.addEventListener('meme', (e) => {
-        console.log(e);
-        document.getElementById('meme').innerHTML = `<img class="memeImage" src="${e.data}">`;
-        app.updateEventsReceived(e);
-      });
+    app.eventSource.addEventListener('meme', (e) => {
+      console.log(e);
+      document.getElementById('meme').innerHTML = `<img class="memeImage" src="${e.data}">`;
+      app.updateEventsReceived(e);
+    });
 
-      eventSource.addEventListener('error', (e) => {
-        console.log('got an error');
-        console.log(e);
-      });
-    } else {
-      // TODO update div to have additional class 'unsupportedBrowser
-      document.getElementById('browserSupport').innerHTML = 'Sorry, your browser does not support <tt>EventSource</tt> which is required for this demo.';
-    }
+    app.eventSource.addEventListener('error', (e) => {
+      console.log('got an error');
+      console.log(e);
+      app.resetStartButton();
+    });
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  app.initialize();
+  const browserSupportElem = document.getElementById('browserSupport');
+
+  if (!! window.EventSource) {
+    browserSupportElem.innerHTML = 'This browser supports <tt>EventSource</tt>! <input type="submit" class="startEvents" id="startEvents" value="Start Events">';
+    document.getElementById('startEvents').addEventListener('click', function(event) {
+      if (this.value === 'Start Events') {
+        this.value = 'Stop Events';
+        app.startEvents();
+      } else {
+        app.eventSource.close();
+        document.getElementById('eventLog').insertAdjacentHTML('afterbegin', '<br>Event stream closed by browser.');
+        app.resetStartButton();
+      }
+    });
+  } else {
+    browserSupportElem.innerHTML = 'This browser does not support <tt>EventSource</tt> :(';
+    browserSupportElem.classList.add('unsupportedBrowser');
+  }
 });
