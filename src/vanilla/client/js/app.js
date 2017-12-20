@@ -34,6 +34,7 @@ const app = {
     });
 
     app.eventSource.addEventListener('catFact', (e) => {
+      console.log(e);
       document.getElementById('catFact').innerHTML = `${e.data}`;
       app.updateEventsReceived(e);
     });
