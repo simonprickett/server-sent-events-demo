@@ -6,8 +6,6 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 
 ## TODO
 
-* Add a start/stop button for the events to the client
-* Stop the client immediately requesting events on page load
 * Produce slides
 * Produce a version that uses frameworks
 
