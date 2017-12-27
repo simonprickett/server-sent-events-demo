@@ -4,9 +4,7 @@ A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetu
 
 ![demo](sse_demo.gif)
 
-## TODO
-
-* Produce slides
+Slides can be found [here](https://docs.google.com/presentation/d/1ueJ6ewO3i34OXRBI8mY6g26cKbkPDf4cNSrtX4ULBx4/edit?usp=sharing).
 
 ## Running this Project
 
