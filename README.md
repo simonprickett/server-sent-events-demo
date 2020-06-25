@@ -40,4 +40,3 @@ Then point a browser at `http://localhost:8000/`.
 * [HTML 5 Rocks Tutorial](https://www.html5rocks.com/en/tutorials/eventsource/basics/)
 * [O'Reilly High Performance Browser Networking SSE page](https://hpbn.co/server-sent-events-sse/)
 * [Data source for cat facts](https://github.com/vadimdemedes/cat-facts)
-* Server Sent Events aren't implemented in MS Edge and are currently "under consideration"... read more and vote [here](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/serversenteventseventsource/)
