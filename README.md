@@ -1,6 +1,6 @@
 # Server Sent Events Demo
 
-A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetup using Node, HTML, JavaScript, CSS.  I also wrote a [post on my website](https://simonprickett.dev/a-look-at-server-sent-events/) about this topic.
+A small Server Sent Events demo for [San Diego JS](http://sandiegojs.org/) Meetup using Node, HTML, JavaScript, CSS.  I also wrote a [post on my website](https://simonprickett.dev/a-look-at-server-sent-events/) about this topic wihich includea a video of me presenting about it at the Meetup.
 
 ![demo](sse_demo.gif)
 
