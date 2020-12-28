@@ -12,24 +12,24 @@ The following instructions assume Mac OS / Linux system with Python installed (t
 
 ### Get the Code using a Terminal Window
 
-```
-git clone https://github.com/simonprickett/server-sent-events-demo.git
-cd server-sent-events-demo
+```bash
+$ git clone https://github.com/simonprickett/server-sent-events-demo.git
+$ cd server-sent-events-demo
 ```
 
 ### Start the Server in a Terminal Window
 
-```
-cd src/server
-npm install
-npm start
+```bash
+$ cd src/server
+$ npm install
+$ npm start
 ```
 
 ### Start the Client in another Terminal Window
 
-```
-cd src/client
-python -m SimpleHTTPServer
+```bash
+$ cd src/client
+$ python -m SimpleHTTPServer
 ```
 
 Then point a browser at `http://localhost:8000/`.
