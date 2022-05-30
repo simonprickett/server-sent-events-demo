@@ -32,6 +32,13 @@ $ cd src/client
 $ python -m SimpleHTTPServer
 ```
 
+or...
+
+```bash
+$ cd src/client
+$ python3 -m http.server
+```
+
 Then point a browser at `http://localhost:8000/`.
 
 ## Reference Materials
